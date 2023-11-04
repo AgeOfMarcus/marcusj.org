@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcus Weinberger</title>
+
+    <link rel='stylesheet' href='static/styles.css?v=3'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    <script src='https://analytics.marcusj.org/analytics.js' defer show onload='showAnalytics()'></script>
+</head>
+<body>
+
+    <div class='nav'>
+        <span class='ps1'>$ </span>
+        <input readonly id='input' value='marcusj.org'>
+    </div>
+
+    <br>
+
+    <button class='left' onclick='cycle(-1)'><</button>
+    <button class='right' onclick='cycle(1)'>></button>
+    
+    <div id='output'>
+        <h1 id="my-name-is-span-style-color-cyan-marcus-weinberger-span-">My name is <span style='color: cyan'>Marcus Weinberger</span></h1>
+
+        <p>I am an avid coder and cybersecurity enthusiast. I&#39;m attending the University of South Florida, and graduate in 2025. In my spare time I enjoy coding on <a href="/__repl">Replit</a> and spending time with friends.</p>
+        <p>Born in Los Angeles, I lived in Florida and Kansas until the age of nine, where I moved to Bristol. I attended secondary school and completed my A Levels in London, which I still call my home. Currently I live in Tampa on-campus at USF. </p>
+        <br/>
+        <p>Check out <a href='https://dash.marcusj.org'>my dashy dashboard</a> or read some posts from <a href='https://marcus.hashnode.dev'>my blog</a> below:</p>
+
+        <div id='posts'>
+            <!-- Loop through posts -->
+            {% for post in posts %}
+            <div class='post'>
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.brief }}</p>
+                {% if post.coverImage %}
+                <img src='{{ post.coverImage }}' alt='Cover Image'/>
+                <br/>
+                {% endif %}
+                <a href='https://{{ blogDomain }}/{{ post.slug }}'>Read more</a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <h2 style='color: green'>Click the arrows on either side to see my projects</h2>
+        <br/>
+        <div id='analytics'></div>
+
+    </div>
+
+    <br>
+    <!--
+    <div class='w3-center'>
+        <div class="w3-content" style="width: 80vw">
+
+        </div><br>
+
+        <button class="term" onclick="cycleImg(-1)">&#10094; Prev</button>
+        <button class="term" onclick="cycleImg(1)">Next &#10095;</button>
+    </div>
+    -->
+
+    <!--
+    <br>
+
+    <div id='controls'>
+        <button id='autoplay' onclick='toggleAutoplay()'>Autoplay</button>
+        <button onclick="cycle(-1)"><<</button>
+        <button onclick='cycle(1)'>>></button>
+    </div>
+    -->
+    
+    <script src='//code.jquery.com/jquery.min.js'></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <script src='static/script.js'></script>
+</body>
+</html>
