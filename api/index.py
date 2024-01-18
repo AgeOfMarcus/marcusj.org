@@ -8,7 +8,7 @@ import os
 import requests
 
 class Hashnode(object):
-    _api_url = 'https://api.hashnode.com'
+    _api_url = 'https://gql.hashnode.com'
     
     def __init__(self, api_key: str):
         self.headers = {
