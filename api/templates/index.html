@@ -38,10 +38,10 @@
                 <h3>{{ post.title }}</h3>
                 <p>{{ post.brief }}</p>
                 {% if post.coverImage %}
-                <img src='{{ post.coverImage }}' alt='Cover Image'/>
+                <img src='{{ post.coverImage.url }}' alt='Cover Image'/>
                 <br/>
                 {% endif %}
-                <a href='https://{{ blogDomain }}/{{ post.slug }}'>Read more</a>
+                <a href='{{ post.url }}'>Read more</a>
             </div>
             {% endfor %}
         </div>

@@ -15,27 +15,28 @@ class Hashnode(object):
             'Authorization': api_key
         }
 
-    def get_user_posts(self, username: str, page: int = 0) -> (str, list):
+    def get_user_posts(self, username: str, pageSize: int = 10, page: int = 1) -> list:
         """
         Accepts a str username as input.
-        Returns the blog domain (str), and a list of posts (dicts)
+        Returns a list of posts (dicts)
         """
         query = '''{
   user(username: "<username>") {
-    publication {
-      posts(page: <page>) {
+    posts(page: <page>, pageSize: <pageSize>) {
+      nodes {
         title
         brief
-        slug
-        coverImage
+        coverImage {
+          url
+        }
+        url
       }
     }
-    publicationDomain
   }
-}'''.replace('<username>', username).replace('<page>', str(page))
+}'''.replace('<username>', username).replace('<page>', str(page)).replace('<pageSize>', str(pageSize))
         req = requests.post(self._api_url, json={'query': query}, headers=self.headers)
         res = req.json()['data']
-        return res['user']['publicationDomain'], res['user']['publication']['posts']
+        return res['user']['posts']['nodes']
 
 # / end hashnode stuff
 
@@ -62,8 +63,8 @@ def add_header(r):
 
 @app.route('/')
 def app_index():
-    blogDomain, posts = globals().get('_hashnode_posts', ('', []))
-    return render_template('index.html', blogDomain=blogDomain, posts=posts)
+    posts = globals().get('_hashnode_posts', ('', []))
+    return render_template('index.html', posts=posts)
 
 @app.route('/projects')
 def app_projects():
