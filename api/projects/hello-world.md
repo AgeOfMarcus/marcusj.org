@@ -5,7 +5,7 @@ title: hello world
 
 *The most complicated `hello world` program in a single line.*
 
-After reading [this article](https://benkurtovic.com/2014/06/01/obfuscating-hello-world.html) about obfuscating the classic ***hello world*** program. The author ended up with the following python code:
+After reading [this article](https://benkurtovic.com/2014/06/01/obfuscating-hello-world.html) about obfuscating the classic ***hello world*** program, I saw that the author ended up with the following python code:
 
 <pre><code class='python'>
 (lambda _, __, ___, ____, _____, ______, _______, ________:

@@ -5,7 +5,10 @@ title: i.marcusj.org
 
 ![i.marcusj.org](static/images/i.marcusj.org/img.png)
 
-This was one of my first projects to use Google Firebase. Images are stored in Google Firestore. 
+This was one of my first projects to use Google Firebase. Images are stored in Google Firestore. Some of the key features include:
+* image deletion
+* images can be linked from external sources
+* open API
 
 ## [API docs](https://i.marcusj.org/api/docs)
 

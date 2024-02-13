@@ -1,0 +1,10 @@
+---
+title: dupl auth
+---
+
+# [auth.marcusj.org](https://auth.marcusj.org)
+
+This project was originally created on Replit, as an alternative to [repl auth](https://docs.replit.com/hosting/authenticating-users-repl-auth). It was designed to be as easy to implement while allowing non-replit users to authenticate with your project.
+
+![[integration example](https://replit.com/@MarcusWeinberger/dupl-auth-html-demo)](static/images/auth.marcusj.org/integration.png)
+

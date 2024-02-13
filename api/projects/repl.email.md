@@ -1,7 +1,7 @@
 ---
 title: repl.email
 ---
-Repl.email was great while it lasted, but sadly is no longer in service.
+Repl.email was great while it lasted, but sadly is no longer in service. Replit has changed a lot since this project was created, and this already was becoming too hard to maintain as it was.
 
 # [repl.email](https://repl.email) - a fully fledged, free email service for replit users
 
